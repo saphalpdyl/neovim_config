@@ -2,7 +2,7 @@
 -- vim.g.loaded_netrwPlugin = 1
 
 local api = require('nvim-tree.api')
-vim.keymap.set("n" , "<leader>f" , api.tree.toggle)
+vim.keymap.set("n" , "<leader>ef" , api.tree.toggle)
 
 require('nvim-tree').setup{
   view = {
