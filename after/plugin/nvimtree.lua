@@ -7,6 +7,10 @@ vim.keymap.set("n" , "<leader>f" , api.tree.toggle)
 require('nvim-tree').setup{
   view = {
     width = 40
+  } ,
+  update_focused_file = {
+    enable = true,
+    update_root = true,
   }
 }
 require('nvim-web-devicons').setup()
