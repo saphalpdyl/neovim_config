@@ -4,5 +4,9 @@
 local api = require('nvim-tree.api')
 vim.keymap.set("n" , "<leader>f" , api.tree.toggle)
 
-require('nvim-tree').setup()
+require('nvim-tree').setup{
+  view = {
+    width = 40
+  }
+}
 require('nvim-web-devicons').setup()
