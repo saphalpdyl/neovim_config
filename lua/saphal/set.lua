@@ -23,4 +23,17 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- Fasten Startup time
+vim.g.clipboard = {
+ name = "xsel",
+ copy = {
+  ["+"] = "xsel --nodetach -i -b",
+  ["*"] = "xsel --nodetach -i -p",
+ },
+ paste = {
+  ["+"] = "xsel  -o -b",
+  ["*"] = "xsel  -o -b",
+ },
+ cache_enabled = 1,
+}
 vim.opt.clipboard = 'unnamedplus' -- No use of different registers
