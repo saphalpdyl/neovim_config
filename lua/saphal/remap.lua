@@ -8,4 +8,7 @@ vim.keymap.set("n" , "<C-k>" , "5k")
 vim.keymap.set("v" , "<C-j>" , "5j") -- For visual mode
 vim.keymap.set("v" , "<C-k>" , "5k")
 
-vim.keymap.set("n" , "<leader>ge" , "<C-t>");
+vim.keymap.set("n" , "<leader>ge" , "<C-t>")
+
+vim.api.nvim_set_keymap("n", "<C-Right>", "<C-w>4>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-Left>", "<C-w>4<", { noremap = true })

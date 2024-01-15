@@ -6,7 +6,7 @@ vim.keymap.set("n" , "<leader>f" , api.tree.toggle)
 
 require('nvim-tree').setup{
   view = {
-    width = 40
+    width = 30
   } ,
   update_focused_file = {
     enable = true,

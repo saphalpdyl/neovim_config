@@ -9,7 +9,6 @@ lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
   'eslint',
-  'pylsp'
 })
 
 local cmp = require('cmp')
@@ -21,10 +20,10 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
 })
 
-lsp.on_attach(function(client,bufnr)
+local on_attach = function(client,bufnr)
 
   local opts = { buffer = bufnr,remap = false }
 
@@ -32,16 +31,21 @@ lsp.on_attach(function(client,bufnr)
   vim.keymap.set('n','K' , function() vim.lsp.buf.hover() end , opts)
   vim.keymap.set('i','<C-h>' , function() vim.lsp.buf.signature_help() end , opts)
 
-end)
+end
+
+lsp.on_attach(on_attach)
 
 lsp.setup() -- Setup Start
 
 -- Diagnostic | Error Messages
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,
+  signs = {
+    active = signs,
+  },
   update_in_insert = false,
   underline = true,
-  severity_sort = false,
+  severity_sort = true,
   float = true,
 })
+
