@@ -5,3 +5,14 @@ require('notify').setup{
 }
 
 vim.notify = require('notify')
+
+vim.keymap.set('n', '<leader>un', function() 
+  require('notify').dismiss({
+    silent = true,
+    pending = true,
+  })
+  end,
+  {
+    desc = "Dismiss all notifications"
+  }
+)
