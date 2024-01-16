@@ -1,4 +1,4 @@
-vim.g.mapleader = " " 
+vim.g.mapleader = " "  -- Setting the leader to Space
 vim.keymap.set("n" , "<leader>pv" , vim.cmd.Ex)
 
 vim.keymap.set("i" , "jk" , "<Esc>")

@@ -1,3 +1,3 @@
 require("saphal.remap");
-require("saphal.packer");
+require("saphal.lazy")
 require("saphal.set");
