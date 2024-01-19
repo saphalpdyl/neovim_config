@@ -17,7 +17,7 @@ return {
         update_root = true,
       },
     }
-    
+
     vim.keymap.set("n", "<leader>f", require("nvim-tree.api").tree.toggle)
   end
 }
