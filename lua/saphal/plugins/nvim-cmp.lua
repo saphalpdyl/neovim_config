@@ -16,6 +16,7 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({
@@ -30,6 +31,8 @@ return {
       },
       sources = {
         { name = 'nvim_lsp'},
+        { name = 'path'},
+        { name = 'buffer'},
       },
       window = {
         completion = cmp.config.window.bordered(),
@@ -39,7 +42,13 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-p>"] =  cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] =  cmp.mapping.select_next_item(cmp_select),
+        ["<CR>"] = cmp.mapping.confirm({ select = false })
       }),
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end
+      }
     })
 
     local lsp_cmds = vim.api.nvim_create_augroup('lsp_cmds', {clear = true})
