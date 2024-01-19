@@ -9,6 +9,7 @@ return {
     {'hrsh7th/cmp-buffer'},       -- Optional
     {'hrsh7th/cmp-path'},         -- Optional
     {'saadparwaiz1/cmp_luasnip'}, -- Optional
+    {'onsails/lspkind.nvim'},     -- Optional
 
     -- Snippets
     {'L3MON4D3/LuaSnip'},             -- Required
@@ -18,6 +19,15 @@ return {
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({
+      formatting = {
+        format = require("lspkind").cmp_format({
+          maxwidth = 50,
+          ellipsis_char = '...',
+          before = function(_, vim_item)
+            return vim_item
+          end
+        })
+      },
       sources = {
         { name = 'nvim_lsp'},
       },
@@ -26,7 +36,7 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
-        ["<tab>"] = cmp.mapping.complete(),
+        ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-p>"] =  cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] =  cmp.mapping.select_next_item(cmp_select),
       }),
