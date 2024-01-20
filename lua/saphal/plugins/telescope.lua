@@ -18,5 +18,5 @@ return {
       end,
       desc="Grep String to search"
     }
-  }
+  },
 }
