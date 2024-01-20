@@ -14,8 +14,9 @@ return {
     {
       "<leader>ps",
       function()
-        require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") }, desc="Grep String to search");
-      end
+        require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
+      end,
+      desc="Grep String to search"
     }
   }
 }
