@@ -18,6 +18,6 @@ return {
       },
     }
 
-    vim.keymap.set("n", "<leader>f", require("nvim-tree.api").tree.toggle)
+    vim.keymap.set("n", "<leader>f", require("nvim-tree.api").tree.toggle, {desc="Toggle Nvim Tree"})
   end
 }
