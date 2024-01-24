@@ -33,6 +33,20 @@ return {
               },
             },
           }
+        end,
+        ['pylsp'] = function ()
+          lspconfig.pylsp.setup{
+            capabilities = lsp_capabilities,
+            settings = {
+              pylsp = {
+                plugins = {
+                  pycodestyle = {
+                    ignore = {"E501"}
+                  }
+                }
+              }
+            },
+          }
         end
       }
     })
