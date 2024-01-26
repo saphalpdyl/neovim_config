@@ -1,5 +1,5 @@
 return {
-  "chasdovski/mini.surround",
+  "echasnovski/mini.surround",
   version = false,
   opts = {
     mappings = {
