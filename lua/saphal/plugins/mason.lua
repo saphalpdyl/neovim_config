@@ -16,7 +16,8 @@ return {
         'html',
         'cssls',
         'rust_analyzer',
-        'pylsp'
+        'pylsp',
+        'gopls'
       },
       handlers = {
         function(server)
